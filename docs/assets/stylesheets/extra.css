@@ -1,0 +1,272 @@
+/* Stravin Brand Tokens */
+:root {
+  /* Core Surfaces & Inks */
+  --stravin-basalt-950: #0E1116;
+  --stravin-slate-900: #161B22;
+  --stravin-slate-800: #252D38;
+  --stravin-limestone-50: #F7F6F2;
+  --stravin-limestone-100: #EAE7DF;
+  --stravin-limestone-200: #D5D0C5;
+  --stravin-ink-900: #14181F;
+  --stravin-slate-400: #93A0B0;
+  --stravin-ink-500: #525C68;
+
+  /* Isometric Mineral Teal Scale & Focal Accent */
+  --stravin-glacier-mint: #64C5B9;
+  --stravin-strata-teal: #2A9D8F;
+  --stravin-abyss-teal: #1C6E66;
+  --stravin-rivet-terracotta: #E06D53;
+
+  /* Product Layer Accents */
+  --stravin-blueprint-blue: #5B8DEF;
+  --stravin-ochre-amber: #D4A34B;
+  --stravin-forged-steel: #7A8B99;
+
+  /* Semantic Aliases matching BRANDING.md */
+  --stravin-plane-top: var(--stravin-glacier-mint);
+  --stravin-plane-mid: var(--stravin-strata-teal);
+  --stravin-plane-shadow: var(--stravin-abyss-teal);
+  --stravin-accent: var(--stravin-rivet-terracotta);
+  --stravin-core: var(--stravin-strata-teal);
+  --stravin-review: var(--stravin-blueprint-blue);
+  --stravin-run: var(--stravin-rivet-terracotta);
+  --stravin-index: var(--stravin-ochre-amber);
+  --stravin-gate: var(--stravin-forged-steel);
+
+  /* Default chip contrast border fallback */
+  --stravin-chip-border: rgba(20, 24, 31, 0.22);
+}
+
+/* Full-width layout on wider screens while keeping side rails and mobile intact */
+.md-grid {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 60em) {
+  .md-grid {
+    padding-inline: 1rem;
+  }
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* Expand tables to use full available body width without breaking mobile scroll */
+.md-typeset__table {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.md-typeset table:not([class]) {
+  width: 100%;
+}
+
+/* Theme-adaptive surface variables for diagrams, chips, and preview chrome */
+[data-md-color-scheme="default"] {
+  --stravin-diagram-bg: var(--stravin-limestone-50);
+  --stravin-diagram-border: var(--stravin-limestone-200);
+  --stravin-chip-border: rgba(20, 24, 31, 0.22);
+  --stravin-card-surface: var(--stravin-limestone-100);
+  --stravin-card-border: var(--stravin-limestone-200);
+}
+
+[data-md-color-scheme="slate"] {
+  --stravin-diagram-bg: var(--stravin-slate-900);
+  --stravin-diagram-border: var(--stravin-slate-800);
+  --stravin-chip-border: rgba(247, 246, 242, 0.25);
+  --stravin-card-surface: var(--stravin-slate-900);
+  --stravin-card-border: var(--stravin-slate-800);
+}
+
+.md-typeset .mermaid {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--stravin-diagram-bg);
+  border: 1px solid var(--stravin-diagram-border);
+  border-radius: 0.4rem;
+  padding: 1rem;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.md-typeset .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Inline CSP-safe Color Chips */
+.color-chip {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.22rem;
+  border: 1px solid var(--stravin-chip-border);
+  vertical-align: -0.14rem;
+  margin-right: 0.35rem;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.color-chip--basalt-950 {
+  background-color: var(--stravin-basalt-950);
+}
+
+.color-chip--slate-900 {
+  background-color: var(--stravin-slate-900);
+}
+
+.color-chip--slate-800 {
+  background-color: var(--stravin-slate-800);
+}
+
+.color-chip--limestone-50 {
+  background-color: var(--stravin-limestone-50);
+}
+
+.color-chip--limestone-100 {
+  background-color: var(--stravin-limestone-100);
+}
+
+.color-chip--limestone-200 {
+  background-color: var(--stravin-limestone-200);
+}
+
+.color-chip--ink-900 {
+  background-color: var(--stravin-ink-900);
+}
+
+.color-chip--slate-400 {
+  background-color: var(--stravin-slate-400);
+}
+
+.color-chip--ink-500 {
+  background-color: var(--stravin-ink-500);
+}
+
+.color-chip--glacier-mint {
+  background-color: var(--stravin-glacier-mint);
+}
+
+.color-chip--strata-teal {
+  background-color: var(--stravin-strata-teal);
+}
+
+.color-chip--abyss-teal {
+  background-color: var(--stravin-abyss-teal);
+}
+
+.color-chip--rivet-terracotta {
+  background-color: var(--stravin-rivet-terracotta);
+}
+
+.color-chip--blueprint-blue {
+  background-color: var(--stravin-blueprint-blue);
+}
+
+.color-chip--ochre-amber {
+  background-color: var(--stravin-ochre-amber);
+}
+
+.color-chip--forged-steel {
+  background-color: var(--stravin-forged-steel);
+}
+
+/* Brand Asset Preview Cards */
+.brand-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.brand-preview {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--stravin-card-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-preview__stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  min-height: 8.5rem;
+}
+
+.brand-preview--dark .brand-preview__stage {
+  background-color: var(--stravin-basalt-950);
+  color: var(--stravin-limestone-50);
+}
+
+.brand-preview--light .brand-preview__stage {
+  background-color: var(--stravin-limestone-50);
+  color: var(--stravin-ink-900);
+}
+
+.brand-preview__mark {
+  height: 5.5rem;
+  width: auto;
+  display: block;
+}
+
+.brand-preview__lockup {
+  max-height: 4rem;
+  max-width: 100%;
+  width: auto;
+  display: block;
+}
+
+.brand-preview__icon {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 0.75rem;
+  display: block;
+}
+
+.brand-preview__caption {
+  padding: 0.65rem 1rem;
+  font-size: 0.78rem;
+  background-color: var(--stravin-card-surface);
+  border-top: 1px solid var(--stravin-card-border);
+}
+
+.brand-preview__caption strong {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+/* Typography Specimens */
+.type-specimen {
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  background-color: var(--stravin-card-surface);
+  border: 1px solid var(--stravin-card-border);
+}
+
+.type-specimen--wordmark {
+  font-family: "Space Grotesk", "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.type-specimen--ui {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.type-specimen--mono {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
