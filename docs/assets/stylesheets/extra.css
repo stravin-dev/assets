@@ -65,21 +65,220 @@
   width: 100%;
 }
 
-/* Theme-adaptive surface variables for diagrams, chips, and preview chrome */
-[data-md-color-scheme="default"] {
+/* Theme-adaptive Stravin Zensical palette overrides (light & dark) */
+:root,
+[data-md-color-scheme="default"],
+[data-md-color-scheme="default"][data-md-color-primary],
+[data-md-color-scheme="default"][data-md-color-accent] {
+  color-scheme: light;
+
+  /* Canvas, surfaces & hairlines */
+  --md-default-bg-color: var(--stravin-limestone-50);
+  --md-default-bg-color--light: rgba(247, 246, 242, 0.75);
+  --md-default-bg-color--lighter: rgba(247, 246, 242, 0.35);
+  --md-default-bg-color--lightest: rgba(247, 246, 242, 0.14);
+  --color-background: 247 246 242;
+  --color-background-subtle: 234 231 223;
+  --color-backdrop: 247 246 242;
+  --color-foreground: 20 24 31;
+
+  /* Typography & borders */
+  --md-default-fg-color: var(--stravin-ink-900);
+  --md-default-fg-color--light: var(--stravin-ink-500);
+  --md-default-fg-color--lighter: rgba(82, 92, 104, 0.65);
+  --md-default-fg-color--lightest: var(--stravin-limestone-200);
+  --md-typeset-color: var(--stravin-ink-900);
+
+  /* Code, admonitions, tables, kbd & footer surfaces */
+  --md-code-bg-color: var(--stravin-limestone-100);
+  --md-code-bg-color--light: rgba(234, 231, 223, 0.78);
+  --md-code-bg-color--lighter: rgba(234, 231, 223, 0.4);
+  --md-code-fg-color: var(--stravin-ink-900);
+  --md-code-hl-color: var(--stravin-rivet-terracotta);
+  --md-code-hl-color--light: rgba(224, 109, 83, 0.16);
+  --md-admonition-bg-color: var(--stravin-limestone-100);
+  --md-admonition-fg-color: var(--stravin-ink-900);
+  --md-footer-bg-color: var(--stravin-limestone-100);
+  --md-footer-bg-color--dark: var(--stravin-limestone-100);
+  --md-typeset-table-color: var(--stravin-limestone-200);
+  --md-typeset-table-color--light: rgba(234, 231, 223, 0.55);
+  --md-typeset-kbd-color: var(--stravin-limestone-100);
+  --md-typeset-kbd-accent-color: var(--stravin-limestone-50);
+  --md-typeset-kbd-border-color: var(--stravin-limestone-200);
+
+  /* Primary (dark navbar for high-contrast mark), links & Rivet Terracotta accent */
+  --md-primary-fg-color: var(--stravin-basalt-950);
+  --md-primary-fg-color--light: var(--stravin-slate-900);
+  --md-primary-fg-color--dark: var(--stravin-basalt-950);
+  --md-primary-bg-color: var(--stravin-limestone-50);
+  --md-primary-bg-color--light: rgba(247, 246, 242, 0.75);
+  --md-accent-fg-color: var(--stravin-rivet-terracotta);
+  --md-accent-fg-color--transparent: rgba(224, 109, 83, 0.16);
+  --md-accent-bg-color: var(--stravin-limestone-50);
+  --md-accent-bg-color--light: rgba(247, 246, 242, 0.75);
+  --md-typeset-a-color: var(--stravin-abyss-teal);
+  --md-typeset-mark-color: rgba(224, 109, 83, 0.16);
+
+  /* Custom Stravin component surfaces */
   --stravin-diagram-bg: var(--stravin-limestone-50);
   --stravin-diagram-border: var(--stravin-limestone-200);
   --stravin-chip-border: rgba(20, 24, 31, 0.22);
   --stravin-card-surface: var(--stravin-limestone-100);
   --stravin-card-border: var(--stravin-limestone-200);
+  --stravin-header-bg: var(--stravin-basalt-950);
+  --stravin-header-fg: var(--stravin-limestone-50);
+  --stravin-header-border: var(--stravin-slate-800);
 }
 
-[data-md-color-scheme="slate"] {
+[data-md-color-scheme="slate"],
+[data-md-color-scheme="slate"][data-md-color-primary],
+[data-md-color-scheme="slate"][data-md-color-accent] {
+  color-scheme: dark;
+
+  /* Canvas, surfaces & hairlines */
+  --md-default-bg-color: var(--stravin-basalt-950);
+  --md-default-bg-color--light: rgba(14, 17, 22, 0.85);
+  --md-default-bg-color--lighter: rgba(14, 17, 22, 0.55);
+  --md-default-bg-color--lightest: rgba(14, 17, 22, 0.25);
+  --color-background: 14 17 22;
+  --color-background-subtle: 22 27 34;
+  --color-backdrop: 14 17 22;
+  --color-foreground: 247 246 242;
+
+  /* Typography & borders */
+  --md-default-fg-color: var(--stravin-limestone-50);
+  --md-default-fg-color--light: var(--stravin-slate-400);
+  --md-default-fg-color--lighter: rgba(147, 160, 176, 0.65);
+  --md-default-fg-color--lightest: var(--stravin-slate-800);
+  --md-typeset-color: var(--stravin-limestone-50);
+
+  /* Code, admonitions, tables, kbd & footer surfaces */
+  --md-code-bg-color: var(--stravin-slate-900);
+  --md-code-bg-color--light: rgba(22, 27, 34, 0.9);
+  --md-code-bg-color--lighter: rgba(22, 27, 34, 0.54);
+  --md-code-fg-color: var(--stravin-limestone-50);
+  --md-code-hl-color: var(--stravin-rivet-terracotta);
+  --md-code-hl-color--light: rgba(224, 109, 83, 0.22);
+  --md-admonition-bg-color: var(--stravin-slate-900);
+  --md-admonition-fg-color: var(--stravin-limestone-50);
+  --md-footer-bg-color: var(--stravin-slate-900);
+  --md-footer-bg-color--dark: var(--stravin-slate-900);
+  --md-typeset-table-color: var(--stravin-slate-800);
+  --md-typeset-table-color--light: rgba(22, 27, 34, 0.65);
+  --md-typeset-kbd-color: var(--stravin-slate-900);
+  --md-typeset-kbd-accent-color: var(--stravin-slate-800);
+  --md-typeset-kbd-border-color: var(--stravin-slate-800);
+
+  /* Primary (Slate 900 navbar), Glacier Mint links & Rivet Terracotta accent */
+  --md-primary-fg-color: var(--stravin-slate-900);
+  --md-primary-fg-color--light: var(--stravin-slate-800);
+  --md-primary-fg-color--dark: var(--stravin-basalt-950);
+  --md-primary-bg-color: var(--stravin-limestone-50);
+  --md-primary-bg-color--light: rgba(247, 246, 242, 0.75);
+  --md-accent-fg-color: var(--stravin-rivet-terracotta);
+  --md-accent-fg-color--transparent: rgba(224, 109, 83, 0.22);
+  --md-accent-bg-color: var(--stravin-basalt-950);
+  --md-accent-bg-color--light: rgba(14, 17, 22, 0.75);
+  --md-typeset-a-color: var(--stravin-glacier-mint);
+  --md-typeset-mark-color: rgba(224, 109, 83, 0.22);
+
+  /* Custom Stravin component surfaces */
   --stravin-diagram-bg: var(--stravin-slate-900);
   --stravin-diagram-border: var(--stravin-slate-800);
   --stravin-chip-border: rgba(247, 246, 242, 0.25);
   --stravin-card-surface: var(--stravin-slate-900);
   --stravin-card-border: var(--stravin-slate-800);
+  --stravin-header-bg: var(--stravin-slate-900);
+  --stravin-header-fg: var(--stravin-limestone-50);
+  --stravin-header-border: var(--stravin-slate-800);
+}
+
+/* Header & Search Chrome: dark surface in both themes so stravin-mark-dark.svg pops */
+.md-header {
+  background-color: var(--stravin-header-bg);
+  color: var(--stravin-header-fg);
+  border-bottom: 1px solid var(--stravin-header-border);
+}
+
+.md-header__title,
+.md-header__button {
+  color: var(--stravin-header-fg);
+}
+
+.md-header .md-search__button {
+  background-color: rgba(247, 246, 242, 0.1);
+  border: 1px solid var(--stravin-slate-800);
+  color: var(--stravin-header-fg);
+}
+
+.md-header .md-search__button:focus,
+.md-header .md-search__button:hover {
+  background-color: rgba(247, 246, 242, 0.18);
+  border-color: var(--md-accent-fg-color);
+  color: var(--stravin-header-fg);
+}
+
+.md-header .md-search__button::before {
+  background-color: var(--stravin-header-fg);
+}
+
+.md-header .md-search__button::after {
+  background-color: var(--stravin-slate-900);
+  color: var(--stravin-slate-400);
+}
+
+[data-md-color-scheme="slate"] .md-header__title,
+[data-md-color-scheme="slate"] h1,
+[data-md-color-scheme="slate"] h2,
+[data-md-color-scheme="slate"] h3,
+[data-md-color-scheme="slate"] h4,
+[data-md-color-scheme="slate"] h5,
+[data-md-color-scheme="slate"] h6 {
+  color: var(--stravin-limestone-50);
+}
+
+/* Footer surface aligned to Limestone 100 (light) / Slate 900 (dark) */
+.md-footer {
+  background-color: var(--md-footer-bg-color);
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Active navigation & TOC links highlighted in Rivet Terracotta */
+.md-nav--primary .md-nav__item .md-nav__link--active,
+.md-nav--primary .md-nav__item .md-nav__link--active code {
+  color: var(--md-accent-fg-color);
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+.md-nav--secondary .md-nav__item .md-nav__link--active,
+.md-nav--secondary .md-nav__item .md-nav__link--active code {
+  color: var(--md-accent-fg-color);
+}
+
+.md-nav__link:focus,
+.md-nav__link:hover,
+.md-typeset a:focus,
+.md-typeset a:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* Search highlights & primary buttons in Rivet Terracotta */
+.md-search-result mark {
+  color: var(--md-accent-fg-color);
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: var(--stravin-limestone-50);
+}
+
+.md-typeset .md-button--primary:focus,
+.md-typeset .md-button--primary:hover {
+  background-color: var(--stravin-abyss-teal);
+  border-color: var(--stravin-abyss-teal);
+  color: var(--stravin-limestone-50);
 }
 
 .md-typeset .mermaid {
