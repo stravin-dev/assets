@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "stravin-assets"
+version = "0.1.0"
+description = "SVG-first brand asset generator CLI for Stravin"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    "anyio",
+    "cyclopts",
+    "pillow",
+    "resvg-py",
+    "zensical",
+]
+
+[project.scripts]
+stravin-assets = "stravin_assets.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stravin_assets"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]

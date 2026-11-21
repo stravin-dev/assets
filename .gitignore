@@ -221,3 +221,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Stravin generated assets, docs build, and OS files
+site/
+.cache/
+.venv/
+dist/
+docs/assets/generated/
+.DS_Store
