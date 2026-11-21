@@ -99,6 +99,6 @@ All multi-step workflows are orchestrated via `asdf exec make <target>`:
 | `assets` | `asdf exec make assets` | Run `stravin-assets build` to populate `dist/` and `docs/assets/generated/` |
 | `test` | `asdf exec make test` | Run the `pytest` suite covering SVG geometry, raster output, and CLI behavior |
 | `build` | `asdf exec make build` | Generate assets and run `zensical build --strict` into `site/` |
-| `serve` | `asdf exec make serve` | Generate assets and launch the local Zensical live-reload server |
+| `serve` | `asdf exec make serve` | Generate assets and launch the local Zensical live-reload server at `http://localhost:8001` |
 | `check` | `asdf exec make check` | Run linting (`ruff`), tests, asset generation, and strict docs verification |
 | `clean` | `asdf exec make clean` | Remove generated `dist/`, `docs/assets/generated/`, and `site/` build artifacts |

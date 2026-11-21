@@ -3,6 +3,7 @@
 ASDF := $(shell command -v asdf 2>/dev/null)
 UV ?= $(if $(ASDF),asdf exec uv,uv)
 PRE_COMMIT ?= $(if $(ASDF),asdf exec pre-commit,pre-commit)
+SERVE_ADDR ?= localhost:8001
 
 help: ## Show available make targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-10s %s\n", $$1, $$2}'
@@ -19,8 +20,8 @@ test: ## Run automated pytest suite
 build: assets ## Build the Zensical static site in strict mode
 	$(UV) run zensical build --strict
 
-serve: assets ## Serve the Zensical site locally with live reload
-	$(UV) run zensical serve
+serve: assets ## Serve the Zensical site locally at http://localhost:8001 with live reload
+	$(UV) run zensical serve --dev-addr $(SERVE_ADDR)
 
 check: assets build test ## Run asset build, strict site build, tests, ruff, and pre-commit
 	$(UV) run ruff check .

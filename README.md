@@ -20,6 +20,6 @@ For a quick single-file reference of the core tokens and canonical SVGs, see [BR
 ```bash
 asdf exec make install   # Install Python dependencies via uv
 asdf exec make assets    # Generate SVGs, PNGs, ICO, WebP into dist/ and sync docs/assets/generated/
-asdf exec make serve     # Serve the Zensical branding docs site locally
+asdf exec make serve     # Serve the Zensical branding docs site locally at http://localhost:8001
 asdf exec make check     # Run linter, tests, asset generation, and strict docs build
 ```

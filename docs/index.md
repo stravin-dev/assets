@@ -53,7 +53,7 @@ All generated SVG, PNG, ICO, and WebP assets are built deterministically from co
 # Regenerate all brand assets and sync docs/assets/generated/
 asdf exec make assets
 
-# Preview this documentation site locally with live reload
+# Preview this documentation site locally at http://localhost:8001 with live reload
 asdf exec make serve
 
 # Run full lint, test, asset generation, and strict Zensical build
