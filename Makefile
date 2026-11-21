@@ -1,7 +1,8 @@
 .PHONY: help install assets test build serve check clean
 
-UV ?= uv
-PRE_COMMIT ?= pre-commit
+ASDF := $(shell command -v asdf 2>/dev/null)
+UV ?= $(if $(ASDF),asdf exec uv,uv)
+PRE_COMMIT ?= $(if $(ASDF),asdf exec pre-commit,pre-commit)
 
 help: ## Show available make targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-10s %s\n", $$1, $$2}'
