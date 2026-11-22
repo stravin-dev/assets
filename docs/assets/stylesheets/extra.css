@@ -106,12 +106,12 @@
   --md-typeset-kbd-accent-color: var(--stravin-limestone-50);
   --md-typeset-kbd-border-color: var(--stravin-limestone-200);
 
-  /* Primary (dark navbar for high-contrast mark), links & Rivet Terracotta accent */
-  --md-primary-fg-color: var(--stravin-basalt-950);
-  --md-primary-fg-color--light: var(--stravin-slate-900);
-  --md-primary-fg-color--dark: var(--stravin-basalt-950);
-  --md-primary-bg-color: var(--stravin-limestone-50);
-  --md-primary-bg-color--light: rgba(247, 246, 242, 0.75);
+  /* Primary (Strata/Abyss Teal matching architecture), links & Rivet Terracotta accent */
+  --md-primary-fg-color: var(--stravin-strata-teal);
+  --md-primary-fg-color--light: var(--stravin-glacier-mint);
+  --md-primary-fg-color--dark: var(--stravin-abyss-teal);
+  --md-primary-bg-color: var(--stravin-ink-900);
+  --md-primary-bg-color--light: var(--stravin-ink-500);
   --md-accent-fg-color: var(--stravin-rivet-terracotta);
   --md-accent-fg-color--transparent: rgba(224, 109, 83, 0.16);
   --md-accent-bg-color: var(--stravin-limestone-50);
@@ -125,9 +125,14 @@
   --stravin-chip-border: rgba(20, 24, 31, 0.22);
   --stravin-card-surface: var(--stravin-limestone-100);
   --stravin-card-border: var(--stravin-limestone-200);
-  --stravin-header-bg: var(--stravin-basalt-950);
-  --stravin-header-fg: var(--stravin-limestone-50);
-  --stravin-header-border: var(--stravin-slate-800);
+  --stravin-header-bg: var(--stravin-limestone-50);
+  --stravin-header-fg: var(--stravin-ink-900);
+  --stravin-header-fg-muted: var(--stravin-ink-500);
+  --stravin-header-border: var(--stravin-limestone-200);
+  --stravin-search-bg: var(--stravin-limestone-100);
+  --stravin-search-bg-hover: var(--stravin-limestone-200);
+  --stravin-search-border: var(--stravin-limestone-200);
+  --stravin-search-kbd-bg: var(--stravin-limestone-50);
 }
 
 [data-md-color-scheme="slate"],
@@ -169,10 +174,10 @@
   --md-typeset-kbd-accent-color: var(--stravin-slate-800);
   --md-typeset-kbd-border-color: var(--stravin-slate-800);
 
-  /* Primary (Slate 900 navbar), Glacier Mint links & Rivet Terracotta accent */
-  --md-primary-fg-color: var(--stravin-slate-900);
-  --md-primary-fg-color--light: var(--stravin-slate-800);
-  --md-primary-fg-color--dark: var(--stravin-basalt-950);
+  /* Primary (Strata/Abyss Teal matching architecture), Glacier Mint links & Rivet Terracotta accent */
+  --md-primary-fg-color: var(--stravin-strata-teal);
+  --md-primary-fg-color--light: var(--stravin-glacier-mint);
+  --md-primary-fg-color--dark: var(--stravin-abyss-teal);
   --md-primary-bg-color: var(--stravin-limestone-50);
   --md-primary-bg-color--light: rgba(247, 246, 242, 0.75);
   --md-accent-fg-color: var(--stravin-rivet-terracotta);
@@ -188,12 +193,17 @@
   --stravin-chip-border: rgba(247, 246, 242, 0.25);
   --stravin-card-surface: var(--stravin-slate-900);
   --stravin-card-border: var(--stravin-slate-800);
-  --stravin-header-bg: var(--stravin-slate-900);
+  --stravin-header-bg: var(--stravin-basalt-950);
   --stravin-header-fg: var(--stravin-limestone-50);
+  --stravin-header-fg-muted: var(--stravin-slate-400);
   --stravin-header-border: var(--stravin-slate-800);
+  --stravin-search-bg: var(--stravin-slate-900);
+  --stravin-search-bg-hover: var(--stravin-slate-800);
+  --stravin-search-border: var(--stravin-slate-800);
+  --stravin-search-kbd-bg: var(--stravin-basalt-950);
 }
 
-/* Header & Search Chrome: dark surface in both themes so stravin-mark-dark.svg pops */
+/* Header & Search Chrome: theme-adaptive light/dark header matching architecture */
 .md-header {
   background-color: var(--stravin-header-bg);
   color: var(--stravin-header-fg);
@@ -205,26 +215,33 @@
   color: var(--stravin-header-fg);
 }
 
-.md-header .md-search__button {
-  background-color: rgba(247, 246, 242, 0.1);
-  border: 1px solid var(--stravin-slate-800);
+.md-header .md-search__button,
+.md-header .md-search__form {
+  background-color: var(--stravin-search-bg);
+  border: 1px solid var(--stravin-search-border);
   color: var(--stravin-header-fg);
 }
 
 .md-header .md-search__button:focus,
-.md-header .md-search__button:hover {
-  background-color: rgba(247, 246, 242, 0.18);
+.md-header .md-search__button:hover,
+.md-header .md-search__form:focus-within,
+.md-header .md-search__form:hover {
+  background-color: var(--stravin-search-bg-hover);
   border-color: var(--md-accent-fg-color);
   color: var(--stravin-header-fg);
 }
 
 .md-header .md-search__button::before {
-  background-color: var(--stravin-header-fg);
+  background-color: var(--stravin-header-fg-muted);
 }
 
 .md-header .md-search__button::after {
-  background-color: var(--stravin-slate-900);
-  color: var(--stravin-slate-400);
+  background-color: var(--stravin-search-kbd-bg);
+  color: var(--stravin-header-fg-muted);
+}
+
+.md-header .md-search__input::placeholder {
+  color: var(--stravin-header-fg-muted);
 }
 
 [data-md-color-scheme="slate"] .md-header__title,
