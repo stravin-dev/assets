@@ -1,5 +1,7 @@
 /* Stravin Brand Tokens */
 :root {
+  color-scheme: light dark;
+
   /* Core Surfaces & Inks */
   --stravin-basalt-950: #0E1116;
   --stravin-slate-900: #161B22;
@@ -16,6 +18,7 @@
   --stravin-strata-teal: #2A9D8F;
   --stravin-abyss-teal: #1C6E66;
   --stravin-rivet-terracotta: #E06D53;
+  --stravin-rivet-terracotta-dark: #B0422A;
 
   /* Product Layer Accents */
   --stravin-blueprint-blue: #5B8DEF;
@@ -68,9 +71,12 @@
 /* Theme-adaptive Stravin Zensical palette overrides (light & dark) */
 :root,
 [data-md-color-scheme="default"],
-[data-md-color-scheme="default"][data-md-color-primary],
-[data-md-color-scheme="default"][data-md-color-accent] {
+body[data-md-color-scheme="default"],
+body[data-md-color-scheme="default"][data-md-color-primary],
+body[data-md-color-scheme="default"][data-md-color-accent] {
   color-scheme: light;
+  accent-color: var(--stravin-abyss-teal);
+  --md-hue: 173deg;
 
   /* Canvas, surfaces & hairlines */
   --md-default-bg-color: var(--stravin-limestone-50);
@@ -94,8 +100,8 @@
   --md-code-bg-color--light: rgba(234, 231, 223, 0.78);
   --md-code-bg-color--lighter: rgba(234, 231, 223, 0.4);
   --md-code-fg-color: var(--stravin-ink-900);
-  --md-code-hl-color: var(--stravin-rivet-terracotta);
-  --md-code-hl-color--light: rgba(224, 109, 83, 0.16);
+  --md-code-hl-color: var(--stravin-rivet-terracotta-dark);
+  --md-code-hl-color--light: rgba(176, 66, 42, 0.14);
   --md-admonition-bg-color: var(--stravin-limestone-100);
   --md-admonition-fg-color: var(--stravin-ink-900);
   --md-footer-bg-color: var(--stravin-limestone-100);
@@ -106,18 +112,18 @@
   --md-typeset-kbd-accent-color: var(--stravin-limestone-50);
   --md-typeset-kbd-border-color: var(--stravin-limestone-200);
 
-  /* Primary (Strata/Abyss Teal matching architecture), links & Rivet Terracotta accent */
+  /* Brand primary (mineral teal) & contrast-adjusted focal accent (terracotta) */
   --md-primary-fg-color: var(--stravin-strata-teal);
   --md-primary-fg-color--light: var(--stravin-glacier-mint);
   --md-primary-fg-color--dark: var(--stravin-abyss-teal);
   --md-primary-bg-color: var(--stravin-ink-900);
   --md-primary-bg-color--light: var(--stravin-ink-500);
-  --md-accent-fg-color: var(--stravin-rivet-terracotta);
-  --md-accent-fg-color--transparent: rgba(224, 109, 83, 0.16);
+  --md-accent-fg-color: var(--stravin-rivet-terracotta-dark);
+  --md-accent-fg-color--transparent: rgba(176, 66, 42, 0.14);
   --md-accent-bg-color: var(--stravin-limestone-50);
   --md-accent-bg-color--light: rgba(247, 246, 242, 0.75);
   --md-typeset-a-color: var(--stravin-abyss-teal);
-  --md-typeset-mark-color: rgba(224, 109, 83, 0.16);
+  --md-typeset-mark-color: rgba(176, 66, 42, 0.14);
 
   /* Custom Stravin component surfaces */
   --stravin-diagram-bg: var(--stravin-limestone-50);
@@ -125,12 +131,18 @@
   --stravin-chip-border: rgba(20, 24, 31, 0.22);
   --stravin-card-surface: var(--stravin-limestone-100);
   --stravin-card-border: var(--stravin-limestone-200);
+  --stravin-btn-primary-fg: var(--stravin-limestone-50);
+  --stravin-btn-primary-hover-bg: var(--stravin-abyss-teal);
+  --stravin-btn-primary-hover-fg: var(--stravin-limestone-50);
 }
 
 [data-md-color-scheme="slate"],
-[data-md-color-scheme="slate"][data-md-color-primary],
-[data-md-color-scheme="slate"][data-md-color-accent] {
+body[data-md-color-scheme="slate"],
+body[data-md-color-scheme="slate"][data-md-color-primary],
+body[data-md-color-scheme="slate"][data-md-color-accent] {
   color-scheme: dark;
+  accent-color: var(--stravin-glacier-mint);
+  --md-hue: 173deg;
 
   /* Canvas, surfaces & hairlines */
   --md-default-bg-color: var(--stravin-basalt-950);
@@ -166,7 +178,7 @@
   --md-typeset-kbd-accent-color: var(--stravin-slate-800);
   --md-typeset-kbd-border-color: var(--stravin-slate-800);
 
-  /* Primary (Strata/Abyss Teal matching architecture), Glacier Mint links & Rivet Terracotta accent */
+  /* Brand primary (mineral teal), Glacier Mint links & Rivet Terracotta accent */
   --md-primary-fg-color: var(--stravin-strata-teal);
   --md-primary-fg-color--light: var(--stravin-glacier-mint);
   --md-primary-fg-color--dark: var(--stravin-abyss-teal);
@@ -185,6 +197,9 @@
   --stravin-chip-border: rgba(247, 246, 242, 0.25);
   --stravin-card-surface: var(--stravin-slate-900);
   --stravin-card-border: var(--stravin-slate-800);
+  --stravin-btn-primary-fg: var(--stravin-ink-900);
+  --stravin-btn-primary-hover-bg: var(--stravin-glacier-mint);
+  --stravin-btn-primary-hover-fg: var(--stravin-ink-900);
 }
 
 [data-md-color-scheme="slate"] h1,
@@ -230,14 +245,14 @@
 .md-typeset .md-button--primary {
   background-color: var(--md-accent-fg-color);
   border-color: var(--md-accent-fg-color);
-  color: var(--stravin-limestone-50);
+  color: var(--stravin-btn-primary-fg);
 }
 
 .md-typeset .md-button--primary:focus,
 .md-typeset .md-button--primary:hover {
-  background-color: var(--stravin-abyss-teal);
-  border-color: var(--stravin-abyss-teal);
-  color: var(--stravin-limestone-50);
+  background-color: var(--stravin-btn-primary-hover-bg);
+  border-color: var(--stravin-btn-primary-hover-bg);
+  color: var(--stravin-btn-primary-hover-fg);
 }
 
 .md-typeset .mermaid {
