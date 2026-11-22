@@ -74,7 +74,7 @@
 
   /* Canvas, surfaces & hairlines */
   --md-default-bg-color: var(--stravin-limestone-50);
-  --md-default-bg-color--light: rgba(247, 246, 242, 0.75);
+  --md-default-bg-color--light: rgba(247, 246, 242, 0.7);
   --md-default-bg-color--lighter: rgba(247, 246, 242, 0.35);
   --md-default-bg-color--lightest: rgba(247, 246, 242, 0.14);
   --color-background: 247 246 242;
@@ -125,7 +125,7 @@
   --stravin-chip-border: rgba(20, 24, 31, 0.22);
   --stravin-card-surface: var(--stravin-limestone-100);
   --stravin-card-border: var(--stravin-limestone-200);
-  --stravin-header-bg: var(--stravin-limestone-50);
+  --stravin-header-bg: var(--md-default-bg-color--light);
   --stravin-header-fg: var(--stravin-ink-900);
   --stravin-header-fg-muted: var(--stravin-ink-500);
   --stravin-header-border: var(--stravin-limestone-200);
@@ -142,7 +142,7 @@
 
   /* Canvas, surfaces & hairlines */
   --md-default-bg-color: var(--stravin-basalt-950);
-  --md-default-bg-color--light: rgba(14, 17, 22, 0.85);
+  --md-default-bg-color--light: rgba(14, 17, 22, 0.54);
   --md-default-bg-color--lighter: rgba(14, 17, 22, 0.55);
   --md-default-bg-color--lightest: rgba(14, 17, 22, 0.25);
   --color-background: 14 17 22;
@@ -193,7 +193,7 @@
   --stravin-chip-border: rgba(247, 246, 242, 0.25);
   --stravin-card-surface: var(--stravin-slate-900);
   --stravin-card-border: var(--stravin-slate-800);
-  --stravin-header-bg: var(--stravin-basalt-950);
+  --stravin-header-bg: var(--md-default-bg-color--light);
   --stravin-header-fg: var(--stravin-limestone-50);
   --stravin-header-fg-muted: var(--stravin-slate-400);
   --stravin-header-border: var(--stravin-slate-800);
@@ -208,6 +208,8 @@
   background-color: var(--stravin-header-bg);
   color: var(--stravin-header-fg);
   border-bottom: 1px solid var(--stravin-header-border);
+  -webkit-backdrop-filter: blur(0.4rem);
+  backdrop-filter: blur(0.4rem);
 }
 
 .md-header__title,
