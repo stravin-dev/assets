@@ -17,6 +17,9 @@ nav = [
   ] },
 ]
 
+[project.extra]
+generator = false
+
 [project.theme]
 language = "en"
 favicon = "assets/generated/favicon.svg"

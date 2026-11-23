@@ -217,6 +217,10 @@ body[data-md-color-scheme="slate"][data-md-color-accent] {
   border-top: 1px solid var(--md-default-fg-color--lightest);
 }
 
+.md-footer-meta {
+  display: none;
+}
+
 /* Active navigation & TOC links highlighted in Rivet Terracotta */
 .md-nav--primary .md-nav__item .md-nav__link--active,
 .md-nav--primary .md-nav__item .md-nav__link--active code {
