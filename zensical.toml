@@ -3,6 +3,7 @@ site_name = "Stravin Brand & Assets"
 site_description = "Brand identity, visual guidelines, color system, logo assets, and asset generation CLI for Stravin."
 docs_dir = "docs"
 extra_css = ["assets/stylesheets/extra.css"]
+extra_javascript = ["assets/javascripts/diagram-panzoom.js"]
 
 nav = [
   { "Overview" = "index.md" },
