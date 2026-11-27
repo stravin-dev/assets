@@ -275,6 +275,135 @@ body[data-md-color-scheme="slate"][data-md-color-accent] {
   height: auto;
 }
 
+/* Interactive Mermaid Diagram Pan/Zoom */
+.diagram-pz {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 1rem 0;
+  background-color: var(--stravin-diagram-bg);
+  border: 1px solid var(--stravin-diagram-border);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.diagram-pz__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--stravin-diagram-border);
+  background-color: var(--md-code-bg-color--light);
+}
+
+.diagram-pz__scale {
+  min-inline-size: 3rem;
+  text-align: center;
+  font-family: var(--md-code-font-family);
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+  user-select: none;
+}
+
+.diagram-pz__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 28px;
+  min-block-size: 28px;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--stravin-diagram-border);
+  border-radius: 0.25rem;
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.diagram-pz__btn:hover {
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+}
+
+.diagram-pz__btn:focus-visible,
+.diagram-pz__viewport:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .diagram-pz__btn {
+    min-inline-size: 36px;
+    min-block-size: 36px;
+  }
+}
+
+.diagram-pz__viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.diagram-pz__viewport.is-zoomed,
+.diagram-pz.is-fullscreen .diagram-pz__viewport {
+  touch-action: none;
+}
+
+.diagram-pz__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.diagram-pz__stage {
+  transform-origin: 0 0;
+  will-change: transform;
+  padding: 1rem;
+}
+
+.diagram-pz .mermaid {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.diagram-pz__dialog {
+  width: min(96vw, 100%);
+  height: min(92vh, 100%);
+  max-width: 96vw;
+  max-height: 92vh;
+  padding: 0;
+  border: 1px solid var(--stravin-diagram-border);
+  border-radius: 0.5rem;
+  background-color: var(--stravin-diagram-bg);
+  color: var(--md-default-fg-color);
+  overflow: hidden;
+}
+
+.diagram-pz__dialog::backdrop {
+  background-color: rgba(14, 17, 22, 0.72);
+}
+
+.diagram-pz__dialog .diagram-pz {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.diagram-pz__dialog .diagram-pz__viewport {
+  flex: 1 1 auto;
+  height: 100%;
+}
+
 /* Inline CSP-safe Color Chips */
 .color-chip {
   display: inline-block;
